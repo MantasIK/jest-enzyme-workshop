@@ -1,8 +1,18 @@
-import logo from "./logo.svg";
+import { useState } from "react";
 import "./App.css";
 
 function App() {
-  return <div data-test="component-app"></div>;
+  const [count, setCount] = useState(0);
+  return (
+    <div data-test="component-app">
+      <h1 data-test="counter-display">
+        The counter is currently <span data-test="count">{count}</span>
+      </h1>
+      <button data-test="increment-button" onClick={() => setCount(count + 1)}>
+        Increment counter
+      </button>
+    </div>
+  );
 }
 
 export default App;
